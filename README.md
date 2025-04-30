@@ -21,12 +21,114 @@ Welcome to the Copa E-Commerce Website repository! This project is an e-commerce
 The repository is organized as follows:
 
 ```
-copa-ecommerce-website/
-├── src/              # Source code for the application
-├── public/           # Public assets and static files
-├── .github/          # GitHub-specific configurations and workflows
-├── README.md         # Project documentation (this file)
-└── package.json      # Project dependencies and scripts
+copa-ecommerce-website/  
+├── .gitignore  
+├── package.json  
+├── pnpm-workspace.yaml (or an equivalent for your package manager)  
+├── README.md  
+├── apps/  
+│   ├── web/ (Next.js 15 frontend)  
+│   │   ├── public/  
+│   │   │   ├── assets/  
+│   │   │   │   ├── images/  
+│   │   │   │   │   ├── products/  
+│   │   │   │   │   ├── banners/  
+│   │   │   │   │   ├── icons/  
+│   │   │   │   │   └── logos/  
+│   │   │   │   ├── fonts/  
+│   │   │   │   └── favicons/  
+│   │   │   └── robots.txt  
+│   │   ├── src/  
+│   │   │   ├── app/ (App Router)  
+│   │   │   │   ├── (home)/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── shop/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── product/  
+│   │   │   │   │   └── [id]/  
+│   │   │   │   │       └── page.tsx  
+│   │   │   │   ├── cart/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── checkout/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── account/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── admin/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── auth/  
+│   │   │   │   │   ├── login/  
+│   │   │   │   │   │   └── page.tsx  
+│   │   │   │   │   ├── register/  
+│   │   │   │   │   │   └── page.tsx  
+│   │   │   │   │   └── logout/  
+│   │   │   │   │       └── page.tsx  
+│   │   │   │   ├── about/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── contact/  
+│   │   │   │   │   └── page.tsx  
+│   │   │   │   ├── layout.tsx  
+│   │   │   │   └── page.tsx  
+│   │   │   ├── components/  
+│   │   │   │   ├── ui/ (shadcn/ui components)  
+│   │   │   │   ├── product/  
+│   │   │   │   ├── cart/  
+│   │   │   │   ├── navigation/  
+│   │   │   │   └── auth/  
+│   │   │   ├── styles/  
+│   │   │   │   ├── globals.css  
+│   │   │   │   ├── theme/  
+│   │   │   │   ├── components/  
+│   │   │   │   │   ├── buttons.css  
+│   │   │   │   │   ├── cards.css  
+│   │   │   │   │   ├── forms.css  
+│   │   │   │   │   └── navigation.css  
+│   │   │   │   └── pages/  
+│   │   │   │       ├── home.css  
+│   │   │   │       ├── product.css  
+│   │   │   │       └── checkout.css  
+│   │   │   ├── lib/  
+│   │   │   │   ├── api/  
+│   │   │   │   ├── auth.ts  
+│   │   │   │   └── utils.ts  
+│   │   │   ├── types/  
+│   │   │   ├── contexts/  
+│   │   │   └── hooks/  
+│   │   ├── next.config.js  
+│   │   ├── tsconfig.json  
+│   │   └── tailwind.config.js (or another CSS framework)  
+│   └── server/ (NestJS backend)  
+│       ├── src/  
+│       │   ├── main.ts  
+│       │   ├── app.module.ts  
+│       │   ├── prisma/  
+│       │   │   └── prisma.service.ts  
+│       │   ├── auth/  
+│       │   │   ├── auth.module.ts  
+│       │   │   ├── auth.controller.ts  
+│       │   │   ├── auth.service.ts  
+│       │   │   ├── strategies/  
+│       │   │   │   ├── jwt.strategy.ts  
+│       │   │   │   └── refresh.strategy.ts  
+│       │   │   ├── guards/  
+│       │   │   │   └── jwt-auth.guard.ts  
+│       │   │   └── dto/  
+│       │   ├── user/  
+│       │   ├── product/  
+│       │   ├── cart/  
+│       │   ├── order/  
+│       │   ├── payment/  
+│       │   └── shared/  
+│       ├── test/  
+│       ├── prisma/  
+│       │   ├── schema.prisma  
+│       │   └── migrations/  
+│       ├── .env  
+│       ├── tsconfig.json  
+│       └── nest-cli.json  
+├── libs/ (shared libraries)  
+│   └── shared-types/ (TypeScript types shared between frontend and backend)  
+├── docker-compose.yml (for PostgreSQL)  
+└── .env (global environment variables)
 ```
 
 ## 🧑‍💻 Getting Started
