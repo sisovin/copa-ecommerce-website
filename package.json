@@ -1,0 +1,19 @@
+{
+  "name": "copa-ecommerce",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run build:server && pnpm run build:frontend",
+    "build:server": "pnpm --filter @copa/server run build",
+    "build:frontend": "pnpm --filter @copa/frontend run build",
+    "test": "pnpm run test:server && pnpm run test:frontend",
+    "test:server": "pnpm --filter @copa/server run test",
+    "test:frontend": "pnpm --filter @copa/frontend run test",
+    "lint": "pnpm run lint:server && pnpm run lint:frontend",
+    "lint:server": "pnpm --filter @copa/server run lint",
+    "lint:frontend": "pnpm --filter @copa/frontend run lint"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
